@@ -1,35 +1,46 @@
+const getFullName = function(){ 
+   return `${this.fname} ${this.sname}`;
+}
+const getInfo= function () {` ${this.sname} years old ${this.age}`; 
+}
+const userFunc ={
+   getFullName: function(){ 
+      return `${this.fname} ${this.sname}`;
+   },
+   getInfo: function () {` ${this.sname} years old ${this.age}`; 
+   },
+};
 
-// console.log(window.document);
-// console.dir(window.document);
-// console.dir(window.document.body);
-// console.dir(window.document.body.children[0]);
-// const h1 = window.document.body.children[0];
-// console.log(h1);
-// function handlerClickH1(){
-//     console.log('click on h1')
-// }
-// h1.addEventListener('click',handlerClickH1);
+const user1 = {
+   fname: 'Brad',
+   sname: 'Pitt',
+   age:44,
+};
+user1._proto_ = userFunc;
 
-// h1.onclick = function () {
-//     console.log('onklick')
-// }
-// console.dir(document)
-// const btns = document.getElementsByTagName('button');
-// console.log(btns);
+const user2 = {
+   fname: 'Tom',
+   sname: 'Rott',
+   age: 34,
+_proto_ :userFunc,
+};
 
-// // for (const btn of btns) {
-// //     btn.addEventListener('mousemove',()=>{
-// //         console.log(btn);
-// //     })
-// // }
-// const [btn1] = document.getElementsByTagName('button');
-// console.log(btn1);
-// const body = document.body;
+function User (fname,sname,age){
+   this.fname = fname;
+   this.sname = sname;
+   this.age = age;
+}
 
-// document.getElementById('unique');
-// console.log(unique);
-// const items = document.getElementsByClassName('item');
-// console.log(items);
+function UserPrototype(){
 
-// const btn2 = document.querySelector('button+button');
-// console.log(btn2);
+   this.getFullName = function(){
+      return`${this.fname} ${this.sname}`;
+   }
+   this.getInfo= function () {
+      return` ${this.sname} years old ${this.age}`; 
+   }
+}
+
+User.prototype = new UserPrototype();
+
+const user3 = new User ( 'Anna','Zeferino',23);
