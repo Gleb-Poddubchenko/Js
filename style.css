@@ -1,22 +1,2 @@
-.slider-container{
-    min-width: 350px;
-    width:100%;
-    max-width:950px;
-    margin:auto;
-    text-align:center;
-}
-.slide{
-    height: 50vh;
-}
-.slide > img{
-    
-    height:100%;
-    object-fit: cover;
-}
-.prev{
 
-}
-.next{
-    
-}
 
