@@ -1,46 +1,37 @@
-const getFullName = function(){ 
-   return `${this.fname} ${this.sname}`;
-}
-const getInfo= function () {` ${this.sname} years old ${this.age}`; 
-}
-const userFunc ={
-   getFullName: function(){ 
-      return `${this.fname} ${this.sname}`;
-   },
-   getInfo: function () {` ${this.sname} years old ${this.age}`; 
-   },
-};
+console.log([]);
 
-const user1 = {
-   fname: 'Brad',
-   sname: 'Pitt',
-   age:44,
-};
-user1._proto_ = userFunc;
+// const arrNums1 = [4,5,6,9,9,9];
+// const deleteCount = 3;
+// const startIndex = -2;
+// const newItem3 =100;
+// console.log( 'arrNums1', arrNums1)
+// const arrNums1ReturnSplice = console.log('return',
+// arrNums1.splice(startIndex,deleteCount,newItem3));
+// console.log('arrNums1', arrNums1);
 
-const user2 = {
-   fname: 'Tom',
-   sname: 'Rott',
-   age: 34,
-_proto_ :userFunc,
-};
 
-function User (fname,sname,age){
-   this.fname = fname;
-   this.sname = sname;
-   this.age = age;
-}
+const color =['red','white','pink','aqua']
 
-function UserPrototype(){
+const colorNums = color.splice(2,0,'green');
+const colorNums1 = color.splice(-1,1,'blue');
+const colorNums2 = color.splice(1,0,'mangenta','fucsia');
+const colorNums3 = color.splice(-3,3)
+console.log(color);
 
-   this.getFullName = function(){
-      return`${this.fname} ${this.sname}`;
-   }
-   this.getInfo= function () {
-      return` ${this.sname} years old ${this.age}`; 
-   }
-}
 
-User.prototype = new UserPrototype();
 
-const user3 = new User ( 'Anna','Zeferino',23);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const dayWeeks =['sun','mon','tue','wen','thi','fri','sat'];
