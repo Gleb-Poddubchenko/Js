@@ -1,37 +1,49 @@
-console.log([]);
+"use strict";
+// const dataProto ={
+//     addFrom:function(){
+//         this.users.forEach((user)=>{
+// user.from = this.from;
+//         })
+//     }
+// };ß
 
-// const arrNums1 = [4,5,6,9,9,9];
-// const deleteCount = 3;
-// const startIndex = -2;
-// const newItem3 =100;
-// console.log( 'arrNums1', arrNums1)
-// const arrNums1ReturnSplice = console.log('return',
-// arrNums1.splice(startIndex,deleteCount,newItem3));
-// console.log('arrNums1', arrNums1);
+// const data = {
+// error:null,
+// from:'db',
+// users:[
+// {id:100,login: 'qwel', isMale:true},
+// {id:200,login: 'qwel21', isMale:true},
+// {id:101,login: 'asd', isMale:false},
+// {id:178,login: 'sss', isMale:false},
+// {id:10,login: 'max', isMale:true}
+// ],
+// __proto__: dataProto,
+// };
+// data.addFrom();
+// console.table(data.users);
+
+const site = {
+  title: "my site",
+  heading: ["About us", "Contacts", "News"],
+  logHeadings: function () {
+    this.heading.forEach((head)=> {
+      console.log(head, "|", this.title);
+    }, this);
+  },
+  logHead3: function () {
+    this.heading.forEach(logHead3.bind(this));
+  },
+};
+
+site.logHeadings();
+
+const logHead3 = function (head, index) {
+  console.log(index + 1, "|", this.title);
+};
+site.logHead3();
 
 
-const color =['red','white','pink','aqua']
 
-const colorNums = color.splice(2,0,'green');
-const colorNums1 = color.splice(-1,1,'blue');
-const colorNums2 = color.splice(1,0,'mangenta','fucsia');
-const colorNums3 = color.splice(-3,3)
-console.log(color);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const dayWeeks =['sun','mon','tue','wen','thi','fri','sat'];
+const logHead4 = function () {
+    
+}
