@@ -1,49 +1,21 @@
 "use strict";
-// const dataProto ={
-//     addFrom:function(){
-//         this.users.forEach((user)=>{
-// user.from = this.from;
-//         })
-//     }
-// };ß
 
-// const data = {
-// error:null,
-// from:'db',
-// users:[
-// {id:100,login: 'qwel', isMale:true},
-// {id:200,login: 'qwel21', isMale:true},
-// {id:101,login: 'asd', isMale:false},
-// {id:178,login: 'sss', isMale:false},
-// {id:10,login: 'max', isMale:true}
-// ],
-// __proto__: dataProto,
-// };
-// data.addFrom();
-// console.table(data.users);
-
-const site = {
-  title: "my site",
-  heading: ["About us", "Contacts", "News"],
-  logHeadings: function () {
-    this.heading.forEach((head)=> {
-      console.log(head, "|", this.title);
-    }, this);
-  },
-  logHead3: function () {
-    this.heading.forEach(logHead3.bind(this));
-  },
+const sum1 = function (number1, ...rest) {
+  Array.from(arguments).reduce((summa, elem) => summa + elem);
 };
 
-site.logHeadings();
-
-const logHead3 = function (head, index) {
-  console.log(index + 1, "|", this.title);
-};
-site.logHead3();
+const sumNumbers2 = (num1, ...rest) => rest.reduce((summa, elem) => summa + elem);
+// собирает в массив все что не имеет своего имени
+const result2 = sumNumbers2(1, 2, 3);
+const result1 = sumNumbers2(1, 2, 3);
 
 
+const arrNums = [5,7,9];
+console.log(arrNums);
+console.log([0],[1],[2]);
+console.log(...arrNums); 
+// srped  разбирает массив на элементы
 
-const logHead4 = function () {
-    
-}
+console.log(Math.max (Math.max(7,3,45)));
+console.log(Math.max(...arrNums));
+
