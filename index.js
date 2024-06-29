@@ -1,17 +1,14 @@
-"use strict";
+'use strict';
 
-const number = 12321;
+const dataBD = '2000/03/12';
 
-const numstring = number.toString();
+const arrDataBDUser = dataBD.split('/');
 
-const arrnum = numstring.split("");
 
-const summa = arrnum.reduce((acc, item) => acc + Number(item), 0);
+const now = new Date();
+console.log(now.getFullYear());
 
-const sumDigitsOfNumber = (number = 0) =>
-  number
-    .toString()
-    .split('')
-    .reduce((sum, item) => sum + Number(item), 0);
+const age = now.getFullYear() - Number(dataBD.split('/').at(0));
+console.log(age);
 
-console.log(sumDigitsOfNumber(11012));
+
