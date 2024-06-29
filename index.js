@@ -1,25 +1,17 @@
 "use strict";
-function recursia() {
-  recursia();
-}
 
+const number = 12321;
 
-function powRecursion (number=2,exp=2){
-  if(exp===0){
-    return 1;
-  }
-  return number * powRecursion(number, exp-1);
-}
-console.log(powRecursion(3,5));
+const numstring = number.toString();
 
+const arrnum = numstring.split("");
 
-function powRecursion2 (number = 0){
-if(number===0){
-  return 1;
-}
-return number * powRecursion2(number-1);
-}
-console.log(powRecursion2(2));
+const summa = arrnum.reduce((acc, item) => acc + Number(item), 0);
 
+const sumDigitsOfNumber = (number = 0) =>
+  number
+    .toString()
+    .split('')
+    .reduce((sum, item) => sum + Number(item), 0);
 
-
+console.log(sumDigitsOfNumber(11012));
