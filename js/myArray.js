@@ -1,41 +1,78 @@
 "use strict";
 const COLOR = ["red", "gray", "rainbow"];
 class Squirrel {
-  constructor(name,color) {
-    this._name = name;
-    this._color = color;
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
   }
   jump() {
     return `${this._name} jumping`;
   }
-  get() {
+  get name() {
     return this._name;
   }
-  set(value) {
+  set name(value) {
     if (value.length < 3) {
       throw new Error("must be >3");
     }
-    return this._name = value;
+    this._name = value;
   }
-  get color() {
-   return this._color;
-  }
+
   set color(value) {
-    if(typeof value !== 'string'){
-      throw new Error('must be string')
+    if (typeof value !== "string") {
+      throw new Error("must be string");
     }
-    if (!COLOR.includes(value)) {
+    if (COLOR.includes(value) === false) {
       throw new Error("must be red , gray ,rainbow");
     }
-     return this._color = value;
+    this._color = value;
   }
-  
+  get color() {
+    return this._color;
+  }
 }
 
-const User1 = new Squirrel("Belka", "вred");
+const User1 = new Squirrel("Belka", "red");
 
-console.log(User1);
-console.log(User1);
-console.log(User1);
-console.log(User1);
+try {
+  const User1 = new Squirrel("Belga", "red");
+  console.log(User1);
+  console.log(User1.jump());
+} catch (error) {
+  console.error(error.message);
+}
+const WORDS = ['I','am','a','magic','sqirrel']
+class FlySquirrel extends Squirrel {
+  constructor(name, color, number) {
+    super(name, color);
+    this.number = number;
+  }
+  get number(){
+    return this._number;
+  }
+  set number(value){
+    if(value<0 || value >50){
+      throw new RangeError('must be 0-50')
+    }
+    this._number = value;
+  }
+jump(){
+ return super.jump()
+}
+fly(){
+  return `${this.name} flying at max lenth ${this.number}`
+}
+say(){
+  return WORDS.join('');
+}
 
+}
+const User2 = new FlySquirrel('belka','red',43);
+try {
+  console.log(User2);
+  console.log(User2.say());
+console.log(User2.jump());
+console.log(User2.fly())
+} catch (error) {
+  error
+}
