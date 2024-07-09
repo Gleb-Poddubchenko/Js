@@ -63,7 +63,7 @@ fly(){
   return `${this.name} flying at max lenth ${this.number}`
 }
 say(){
-  return WORDS.join('');
+  return WORDS.join(' ');
 }
 
 }
