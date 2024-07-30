@@ -1,53 +1,32 @@
-// "use strict";
+const arr1 = [4, 5, 9, 4, 8, 6, 9, 4, 9];
 
-// const map1 = new Map();
-// console.log(map1);
-// map1.set("bar", "fig");
-// map1.set(null, null);
-// map1.set(true, 1);
-// const sum = (a, b) => a + b;
-// map1.set(sum, sum(5, 7));
+const setArr1 = new Set(arr1);
+console.log(setArr1);
+const uniqArr1 = [...setArr1];
+console.log(uniqArr1);
+const uniqArr2 = [...new Set(arr1)];
+console.log(uniqArr2);
 
-// console.log(map1.get("bar"));
+set1 = new Set();
 
-// console.log(map1.has(sum));
-// console.log(map1.has(1));
-// if (map1.has(null)) {
-//   map1.delete(null);
-// }
-// // map1.clear()
-// console.log(...map1.entries());
-// console.log(map1.keys());
-// console.log(map1.values());
-// console.log(map1);
+set1.add(1);
+set1.add(2);
+set1.add(3);
+set1.add(4);
+set1.delete(1);
+console.log(set1);
 
-const dictionary = new Map();
+// console.log(set1.entries());
 
-dictionary.set("пес", "dog" );
-dictionary.set("кіт", "cat");
-dictionary.set( "риба","fish");
-dictionary.set( "ранок","morning");
-dictionary.set("go", "йти");
-dictionary.set("catch", "виловити");
-dictionary.set("fun", "веселощі");
-dictionary.set("and", "i");
-dictionary.set("river", "річка");
-dictionary.set("see", "побачити");
-dictionary.set("at", "на");
+console.log(...setArr1.entries());
+console.log([...setArr1.keys()]);
+console.log(...setArr1.values());
 
-const sent = "Пес i кiт ранок йти на рiчка,побачити риба i виловити";
-const translate = (str, dictionary) => {
-  const lowerStr = str.toLowerCase();
-  const words = lowerStr.split(" ");
-  console.log(words);
-  const newWords = words.map((word)=>{
-    return dictionary.get(word)
-  })
-  console.log(newWords)
-const newStr = newWords.join(' ')
-console.log(newStr);
-};
+console.log(setArr1.has(4));
 
-console.log(translate( sent, dictionary));
-console.log(translate( sent, dictionary));
-console.log(translate( sent, dictionary));
+const sent1 = "Set.prototype";
+const sent2 = "to be or not to be";
+
+const letters = new Set(sent2.split(" "));
+console.log(letters);
+
