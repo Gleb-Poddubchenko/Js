@@ -1,41 +1,38 @@
 "use strict";
 
-const user = {
-  public1: 44,
-  privatInfo: {
-    id: 14,
-    login: "Brad",
-    email: "bradgmail.com",
-    bd: {
-      year: 1963,
-      month: 12,
-      day: 18,
-    },
+
+const imageDB = [
+  {src:'https://t3.ftcdn.net/jpg/05/63/76/92/360_F_563769202_XvjMvyMO593Wt70Um2OQPJ5CZrTXbT4t.jpg',
+    alt:'sea'
   },
-  contactInfo: {
-    adress: {
-      town: "NY",
-      street: "15 avenu",
-      house: 547,
-    },
-    phone: "123-56-85",
-  },
-  generalInfo: {
-    profession: "actor",
-    children: ["Fred", "Anna", "Max", "Alex"],
-  },
-};
+{
+  src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKSMvRUhhjJ6VDhI3_kqmzaLEja7wrrhS23g&s',
+  alt:'sea 2',
+},
+{
+  src:'https://www.marineinsight.com/wp-content/uploads/2019/04/Shallow-Water-Waves.jpg',
+  alt:'sea 3',
+},
+];
+const slider = new Slider(imageDB)
 
-console.log(user.privatInfo.login, user.contactInfo.phone);
+const image = document.querySelector(".slider-container > .slide > img");
 
-//destrur
+const [prevBtn, nextBtn] = document.querySelectorAll(
+  ".slider-container>button"
+);
 
-const {
-contactInfo:{phone: userPhone,adress:{street}},
-generalInfo:{children:[,,thirdChild]}
-} = user;
+function upDateSlide(){
+  image.src = slider.currentSlide.src
+  image.alt = slider.currentSlide.alt;
+}
+upDateSlide()
 
-console.log(userPhone);
-// console.log(children);
-console.log(street);
-console.log(thirdChild);
+prevBtn.addEventListener('click',()=>{
+slider.currentIndex = slider.prev();
+upDateSlide()
+})
+nextBtn.addEventListener('click',()=>{
+  slider.currentIndex = slider.next()
+ upDateSlide()
+})
