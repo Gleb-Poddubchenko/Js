@@ -22,7 +22,7 @@ class Slider {
   prev() {
     return (this._currentIndex -1 +this._slides.length)% this._slides.length;
   }
-  next() {
+ next() {
 return (this._currentIndex +1)% this._slides.length;
   }
 }
