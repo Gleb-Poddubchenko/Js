@@ -28,11 +28,26 @@ function upDateSlide(){
 }
 upDateSlide()
 
-prevBtn.addEventListener('click',()=>{
-slider.currentIndex = slider.prev();
-upDateSlide()
-})
-nextBtn.addEventListener('click',()=>{
-  slider.currentIndex = slider.next()
- upDateSlide()
-})
+
+prevBtn.addEventListener('click', handlerSlide('prev'))
+
+nextBtn.addEventListener('click',handlerSlide('next'))
+
+function handlerSlide(direction='next'){
+ return ()=>{
+    slider.currentIndex = slider[direction]
+    upDateSlide()
+  }
+}
+
+
+
+
+// prevBtn.addEventListener('click',()=>{
+// slider.currentIndex = slider.prev;
+// upDateSlide()
+// })
+// nextBtn.addEventListener('click',()=>{
+//   slider.currentIndex = slider.next
+//  upDateSlide()
+// })

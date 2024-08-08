@@ -19,10 +19,10 @@ class Slider {
   get currentSlide() {
     return this._slides[this._currentIndex];
   }
-  prev() {
+  get prev() {
     return (this._currentIndex -1 +this._slides.length)% this._slides.length;
   }
- next() {
+ get next() {
 return (this._currentIndex +1)% this._slides.length;
   }
 }
