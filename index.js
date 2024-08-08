@@ -1,16 +1,17 @@
 "use strict";
 
-const button = document.getElementById('unique')
+const button = document.getElementById("unique");
 
-unique.addEventListener('click', handlerClick)
+const objMyEvent = new Event("myEvent");
+// unique.dispatchEvent("myEvent");
+unique.addEventListener("myEvent", handlerClick);
 
-function handlerClick(){
-  console.log('hsndlerClick')
-  unique.removeEventListener('click',handlerClick)
-  unique.disabled = true
+function handlerClick() {
+  console.log("hsndlerClick");
+  unique.removeEventListener("click", handlerClick);
+  unique.disabled = true;
 }
 
-
-const objMouseClickEvent = new MouseEvent('click')
-
-unique.dispatchEvent(objMouseClickEvent)
+if (Math.random() > 0.5) {
+  unique.dispatchEvent(objMyEvent);
+}
