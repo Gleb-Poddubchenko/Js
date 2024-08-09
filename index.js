@@ -1,17 +1,27 @@
 "use strict";
 
-const button = document.getElementById("unique");
+const unique = document.getElementById("unique");
+const [main] = document.getElementsByTagName("main");
+const section = document.querySelector("section");
 
-const objMyEvent = new Event("myEvent");
-// unique.dispatchEvent("myEvent");
-unique.addEventListener("myEvent", handlerClick);
+console.log(main.getAttribute("title"));
 
-function handlerClick() {
-  console.log("hsndlerClick");
-  unique.removeEventListener("click", handlerClick);
-  unique.disabled = true;
-}
+console.log(main.hasAttribute("button"));
 
-if (Math.random() > 0.5) {
-  unique.dispatchEvent(objMyEvent);
-}
+console.log(section.hasAttribute("button"));
+console.log(main.setAttribute("title", "new value for main title"));
+// like string
+section.setAttribute("title", "title for section");
+
+//different way
+
+
+// like obj
+const attrId = document.createAttribute("id");
+console.dir(attrId);
+attrId.value = "ident-for-section";
+console.log(attrId);
+section.setAttributeNode(attrId)
+
+// dataset
+console.log(section.dataset);
