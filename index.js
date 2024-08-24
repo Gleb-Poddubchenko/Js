@@ -17,14 +17,6 @@ function handlerBtn(event) {
   wrapperBtn.style.backgroundColor = color;
 }
 
-
-
-
-
-
-
-
-
 for (const btn of btns2) {
   btn.addEventListener("click", handlerBtn);
 }
