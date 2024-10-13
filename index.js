@@ -1,14 +1,14 @@
 "use strict";
 console.log("1");
 
-const id = setTimeout(() => {
+const id = setInterval(() => {
   console.log("subscribe");
 }, 3000);
 
 document.getElementById('btn');
 
 btn.addEventListener('click',({target})=>{
-    clearTimeout(id);
+    clearInterval(id);
 })
 
 // clearTimeout(id)
