@@ -1,18 +1,16 @@
 "use strict";
 
-const promise = fetch("./users.json");
-console.log(promise);
-
-promise.then((response) => {
-  console.log("ok", response);
-  const dataPromise = response.json();
-  dataPromise.then((data) => {
-    console.table(data);
+ fetch("./users.json").then((response) => 
+  response.json())
+  .then((data) => {
+data.forEach((user)=>{
+    console.log(user.fName);
+    
+})
+  }).catch(()=>{
+    console.table(error);
+  }).finally(()=>{
+    console.table('finally')
   })
-},
-  ()=>{
-    console.log(error);
-  }
-);
 
 // promise.then().catch().finally()

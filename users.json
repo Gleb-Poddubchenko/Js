@@ -1,4 +1,4 @@
-{
+[{
   "fName": "Brad",
   "lName": "Pitt",
   "age": 60,
@@ -6,4 +6,24 @@
   "ukrainianPasport": null,
   "children": ["Alex", "Anna", "Max"],
   "adress": { "town": "NY", "house": 123 }
-}
+},
+{
+    "fName": "def",
+    "lName": "Pitt",
+    "age": 40,
+    "isMale": true,
+    "ukrainianPasport": null,
+    "children": ["Alex", "Anna", "Max"],
+    "adress": { "town": "NY", "house": 123 }
+  },
+
+  {
+    "fName": "Brddddad",
+    "lName": "Pitddddt",
+    "age": 60,
+    "isMale": true,
+    "ukrainianPasport": null,
+    "children": ["Alex", "Anna", "Max"],
+    "adress": { "town": "NY", "house": 123 }
+  }
+]
