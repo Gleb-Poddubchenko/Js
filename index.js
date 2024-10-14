@@ -1,30 +1,29 @@
 "use strict";
-// console.log("1");
 
-// const id = setInterval(() => {
-//   console.log("subscribe");
-// }, 3000);
+const user = {
+  fName: "Brad",
+  lName: "Pitt",
+  age: 60,
+  getFullName() {
+    return this.fName + " " + this.lName;
+  },
+  isMale: true,
+  hasPet: undefined,
+  ukrainianPasport: null,
+  [Symbol("symbol")]: "symbol",
+  children: ["Alex", "Anna", "Max"],
+  adress: {
+    town: "NY",
+    house: 123,
+  },
+};
 
-// document.getElementById('btn');
+console.log(user);
 
-// btn.addEventListener('click',({target})=>{
-//     clearInterval(id);
-//     console.log('clear');
+const serialiseUser = JSON.stringify(user);
+console.log(serialiseUser);
 
-// })
+ 
+const deSerialiseUser = JSON.parse(serialiseUser);
 
-// // clearTimeout(id)
-
-// console.log("2");
-
-function work() {
-  let number = 1;
-
-  let interval = setInterval(() => {
-    console.log(number);
-    number++;
-
-    if (number > 10) clearInterval(interval);
-  }, 500);
-}
-work();
+console.log(deSerialiseUser);

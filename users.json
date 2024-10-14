@@ -1,0 +1,9 @@
+{
+  "fName": "Brad",
+  "lName": "Pitt",
+  "age": 60,
+  "isMale": true,
+  "ukrainianPasport": null,
+  "children": ["Alex", "Anna", "Max"],
+  "adress": { "town": "NY", "house": 123 }
+}
